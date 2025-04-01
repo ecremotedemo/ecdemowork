@@ -43,5 +43,6 @@ jobs:
         
         # Establish an SSH connection to the remote server in the background, forwarding port 8080
         ssh -i ~/.ssh/id_rsa -L 8080:localhost:8080 $REMOTE_CLUSTER_SSH_USERNAME@$REMOTE_CLUSTER_SSH_IP -N &
+        sleep 5
        
         python src/submit_run.py
